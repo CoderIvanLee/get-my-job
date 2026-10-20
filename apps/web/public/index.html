@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>向职 · 本地求职工作台</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" type="module"></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="#jobs"><span class="brand-mark" aria-hidden="true">向</span><span>向职<small>JOB WORKSPACE</small></span></a>
+      <div class="workspace-tag"><span class="live-dot"></span> 我的本地工作空间</div>
+      <nav aria-label="主导航">
+        <a href="#jobs" data-page="jobs"><span aria-hidden="true">▦</span> 意向岗位 <span id="nav-count" class="count">0</span></a>
+        <a href="#profile" data-page="profile"><span aria-hidden="true">◎</span> 我的档案</a>
+        <a href="#growth" data-page="growth"><span aria-hidden="true">↗</span> 学习成长</a>
+        <a href="#guide" data-page="guide"><span aria-hidden="true">⌘</span> 连接 Skill</a>
+        <a href="#settings" data-page="settings"><span aria-hidden="true">⚙</span> 模型设置</a>
+      </nav>
+      <div class="sidebar-bottom"><strong>每一步，都有真实积累。</strong><p>从心仪的岗位出发，整理经历，找到下一步方向。</p><span class="local-badge">本地部署 · 开源</span></div>
+    </aside>
+    <main>
+      <header class="topbar"><span id="breadcrumb">我的工作空间 / 意向岗位</span><span class="local-indicator"><span class="live-dot"></span> 资料保存在本机</span></header>
+      <div id="content" class="content" aria-live="polite"></div>
+      <footer>向职 · AI Job Search 中国本土化适配 <span>让经历可追溯，让准备有方向</span></footer>
+    </main>
+  </div>
+  <dialog id="job-dialog" aria-labelledby="dialog-title">
+    <form id="job-form">
+      <div class="dialog-heading"><div><span class="eyebrow">BUILD YOUR OPPORTUNITIES</span><h2 id="dialog-title">收藏一个新机会</h2></div><button type="button" class="icon-button" id="close-dialog" aria-label="关闭">×</button></div>
+      <input name="version" type="hidden"><input name="id" type="hidden">
+      <div class="field-grid">
+        <label>岗位名称 <span class="required">*</span><input name="title" required maxlength="200" placeholder="例如：AI 应用开发工程师"></label>
+        <label>公司<input name="company" maxlength="200" placeholder="公司名称"></label>
+        <label>工作地点<input name="location" maxlength="200" placeholder="例如：上海 · 徐汇区"></label>
+        <label>薪资原文<input name="salary" maxlength="200" placeholder="例如：20–35K · 14薪"></label>
+      </div>
+      <label>原始职位链接<input name="url" type="url" placeholder="https://…（可选，用于回看和去重）"></label>
+      <label>完整职位描述 <span class="required">*</span><textarea name="posting" rows="7" required maxlength="100000" placeholder="粘贴岗位职责、任职要求等原文。当前版本保存你提供的内容，不会自动抓取链接。"></textarea></label>
+      <label>我的备注<textarea name="notes" rows="2" maxlength="100000" placeholder="感兴趣的原因、待确认的问题……"></textarea></label>
+      <p id="job-form-error" class="form-error" role="alert"></p>
+      <div class="dialog-actions"><button type="button" class="button secondary" id="cancel-dialog">取消</button><button class="button primary" type="submit">保存岗位</button></div>
+    </form>
+  </dialog>
+  <div id="toast" role="status" hidden></div>
+</body>
+</html>

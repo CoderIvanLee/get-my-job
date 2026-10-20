@@ -1,0 +1,12 @@
+{
+  "name": "ai-job-search-cn-workspace",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node apps/web/server.mjs",
+    "workspace": "node tools/workspace/cli.mjs",
+    "test:workspace": "node --test tests/workspace.test.mjs tests/growth.test.mjs"
+  }
+}
